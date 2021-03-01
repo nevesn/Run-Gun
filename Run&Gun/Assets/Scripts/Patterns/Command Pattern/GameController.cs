@@ -12,6 +12,7 @@ namespace CommandPattern.RebindKeys
         private Command buttonA;
         private Command buttonS;
         private Command buttonD;
+        private Command buttonSpace;
 
 
         void Start()
@@ -21,6 +22,7 @@ namespace CommandPattern.RebindKeys
             buttonA = new MoveLeftCommand(objectThatMoves);
             buttonS = new MoveDownCommand(objectThatMoves);
             buttonD = new MoveRightCommand(objectThatMoves);
+            buttonSpace = new JumpCommand(objectThatMoves);
 
         }
 
@@ -41,6 +43,10 @@ namespace CommandPattern.RebindKeys
             if (Input.GetKeyDown(KeyCode.D))
             {
                 ExecuteNewCommand(buttonD);
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ExecuteNewCommand(buttonSpace);
             }
         }
 

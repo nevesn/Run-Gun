@@ -9,6 +9,14 @@ namespace CommandPattern.RebindKeys
     {
         private const float MOVE_STEP_DISTANCE = 1f;
 
+        public float jumpForce = 66;
+        private Rigidbody2D rb2d;
+
+        private void Start()
+        {
+            rb2d = this.GetComponent<Rigidbody2D>();
+        }
+
         public void MoveUp()
         {
             Move(Vector2.up);
@@ -27,6 +35,12 @@ namespace CommandPattern.RebindKeys
         public void MoveRight()
         {
             Move(Vector2.right);
+        }
+
+        public void Jump()
+        {
+            Debug.Log("Jumpei carai!");
+            rb2d.AddForce(Vector2.up * jumpForce);
         }
 
 
