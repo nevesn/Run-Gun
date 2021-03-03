@@ -39,10 +39,15 @@ namespace CommandPattern.RebindKeys
 
         public void Jump()
         {
-            Debug.Log("Jumpei carai!");
+            //Debug.Log("Jumpei carai!");
             rb2d.AddForce(Vector2.up * jumpForce);
         }
 
+        public void Fire()
+        {
+            Debug.Log("Ra ta ta ta ta!");
+            //intanciar o tiro a partir do child object do player.
+        }
 
         private void Move(Vector2 dir)
         {
